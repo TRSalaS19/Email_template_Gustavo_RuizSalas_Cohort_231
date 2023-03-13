@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Font awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Bootstrap 5 CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container-fluid container-page-wrapper p-0 m-0 h-100">
+    <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid m-0">
+          <!-- Logo and email client name -->
+          <a class="navbar-brand logo" href="#"
+            ><img
+              class="nav-brand-logo"
+              src="https://res.cloudinary.com/imagesforapi/image/upload/v1678221318/Email_template_project_BVT/Infinity_Email_iyq6ky.png"
+              alt=""
+          /></a>
+          <span class="navbar-text brand_name text-uppercase">Infinity Email</span>
+
+          <!-- collapse toggle button,links and searchbar  -->
+          <button
+            class="navbar-toggler hamburger"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon hamburger"></span>
+          </button>
+          <div class="collapse navbar-collapse pe-2" id="navbarTogglerDemo02">
+            <ul class="navbar-nav justify-content-center m-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link navbar_links" aria-current="page" href="#"
+                  ><i class="fa-sharp fa-solid fa-star"></i>Inbox</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar_links" href="#">All Inboxes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar_links">Contacts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar_links">Account</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar_links">Logout</a>
+              </li>
+            </ul>
+            <form class="d-flex me-1" role="search">
+              <input
+                class="form-control me-1"
+                type="search"
+                placeholder="Search Emails"
+                aria-label="SearchEmails"
+              />
+              <button class="btn btn-primary search_button" type="submit">
+                Search
+              </button>
+            </form>
+            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#newEmailModal">Compose</button>
+            <!-- Modal -->
+            <div class="modal fade" id="newEmailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">New Email</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Recipient:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                      </div>
+                      <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Subject:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                      </div>
+                      <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+        
+      <!--  -->
+
+      <div class="container-fluid h-100 ">
+      <!-- Column 1 with email folders -->
+      <div class="row h-100 ">
+          <div class="col-lg-2 d-none d-lg-block p-0 inbox-container">
+            <div class="list-group list-group-flush h-100">
+              <a href="#" class="list-group-item inbox_list_items">Star Inbox</a>
+              <a href="#" class="list-group-item inbox_list_items">All Inbox</a>
+              <a href="#" class="list-group-item inbox_list_items">Flagged</a>
+              <a href="#" class="list-group-item inbox_list_items">Sent Mail</a>
+              <a href="#" class="list-group-item inbox_list_items">Junk</a>
+              <a href="#" class="list-group-item inbox_list_items">Deleted</a>
+              <a href="#" class="list-group-item inbox_list_items">User Folders</a>
+            </div>
+          </div>
+
+
+          <!-- Column 2 with messages -->
+          <div class="col-lg-4 col-md-6 p-0 h-100 imc_container" id="messages_list">
+            <div class="col m-0" data-bs-spy="scroll" data-bs-target="messages_list">
+              <div class="list-group rounded-0">
+                <a href="#" class="list-group-item messages_list list-group-item-action selected" aria-current="true">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">John Smith</h5>
+                    <small>Today</small>
+                  </div>
+                  <p class="mb-1">Meeting @ 5pm Today!</p>
+                  <small>Please make sure you come to the meeting!</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action aria-current="true">
+                  <div class="d-flex w-100 justify-content-between ">
+                    <h5 class="mb-1">Best Buy</h5>
+                    <small>Today</small>
+                  </div>
+                  <p class="mb-1">Sales All the time!</p>
+                  <small>Buy our stuff!</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">WalMart</h5>
+                    <small class="text-muted">3 days ago</small>
+                  </div>
+                  <p class="mb-1">Shop here!</p>
+                  <small class="text-muted">We want your money!</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Target</h5>
+                    <small class="text-muted">3 days ago</small>
+                  </div>
+                  <p class="mb-1">We want your money too!</p>
+                  <small class="text-muted">Give me all your money! 🤑</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Best Buy Again</h5>
+                    <small class="text-muted">3 days ago</small>
+                  </div>
+                  <p class="mb-1">DID YOU SEE OUR SALES YET!</p>
+                  <small class="text-muted">🤑</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Apple</h5>
+                    <small class="text-muted">3 days ago</small>
+                  </div>
+                  <p class="mb-1">New Products!</p>
+                  <small class="text-muted">Buy our stuff!</small>
+                </a>
+                <div class="end_of_list d-flex justify-content-center align-items-center">
+                  <a class="" href="">Click to Refresh</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3rd column messages -->
+          <div class="col-lg-6 col-md-6 h-100 m-0 border-start d-none d-md-block">
+            <!-- Top Call to actions buttons -->
+            <div class="row justify-content-between">
+              <div class="col-lg-6 col-md-5 d-flex p-0 justify-content-start">
+                <button class="btn btn-success m-1">reply</button>
+                <button class="btn btn-primary m-1">Forward</button>
+              </div>
+              <div class="col-lg-4 col-md-3 d-flex justify-content-end">
+                <button class="btn btn-success m-1">Delete</button>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- Contact & message info section -->
+            <div class="row">
+              <div class="col-lg-2 col-xl-2 col-xxl-2 m-0 d-flex justify-content-md-center justify-content-lg-start align-items-center">
+                <img class="img contact-img" src="https://res.cloudinary.com/imagesforapi/image/upload/v1678393792/Email_template_project_BVT/pexels-daniel-xavier-1121796_z1dvsp.png" alt="">
+              </div>
+                <div class="col-lg-7 col-xl-8 col-xxl-8 p-0 d-flex flex-column align-items-md-center align-items-lg-start">
+                  <p>From: John Smith</p>
+                  <p>To: HappyEmail@email.com</p>
+                </div>
+              <div class="col-lg-3 col-xl-2 col-xxl-2 d-flex justify-content-lg-end justify-content-md-center align-items-center ">
+                <p>Date & time</p>
+              </div>
+            </div>
+              <!--  -->
+
+            <!-- Message -->
+
+            <!-- message sent from sender -->
+            <div class="row">
+              <div class="card p-0 text-center rounded-0">
+                <div class="card-header">
+                  Meeting @ 5pm Today!
+                </div>
+                <div class="card-body">
+                  <p class="card-text text-start">
+                    Dear Employees,<br>
+
+                    I hope this email finds you well. I am writing to remind you of the web developers' meeting scheduled for today at 5 PM. The meeting is important as we will be discussing some critical issues regarding our ongoing web development projects.
+                    
+                    Please make every effort to attend the meeting today at 5 PM. If you are unable to attend, please let me know as soon as possible so that we can arrange for someone to take notes on your behalf.
+                    
+                    Thank you for your attention to this matter, and I look forward to seeing you at the meeting.
+                    
+                    <br>Best regards,<br>
+                    Your Boss
+                  </p>
+                </div>
+                <div class="card-footer">
+                  Today
+                </div>
+              </div>
+            </div>
+
+            <!-- Reply TextArea -->
+
+            <div class="row">
+                <div class="col col-xxl-12 d-flex flex-column align-items-center">
+                  <textarea class="form-control border-success mt-2"  rows="3"></textarea>
+                  <button class="btn btn-lg btn-warning w-25 my-3 ">Reply</button>
+                </div>
+            </div>
+            
+            <!--  -->
+            
+          </div>
+        </div>
+      </div>
+    <!-- bootstrap JS CDN -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

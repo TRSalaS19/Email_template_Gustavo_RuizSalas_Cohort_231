@@ -1,0 +1,75 @@
+.check-border {
+  border: 5px solid red;
+}
+/* body styles */
+body {
+  height: 100vh;
+}
+
+/* Navigation styles */
+nav {
+  background-color: #ac0d0d;
+}
+
+.logo a {
+  transition: 0.2s ease-in-out;
+}
+
+.logo a:hover {
+  transform: scale(1.1);
+}
+
+.hamburger {
+  background-color: #f48b29;
+}
+
+.brand_name {
+  color: white;
+}
+
+.nav-brand-logo {
+  width: 40px;
+}
+
+.navbar_links {
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+
+.navbar_links:hover {
+  transform: scale(1.1);
+  color: #f0c929;
+}
+
+.search_button {
+  color: black;
+  border: none;
+  background-color: #f0c929;
+}
+
+/* Column 1 inbox column */
+
+/* Column 2 inbox messages styles */
+
+.end_of_list a {
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+.end_of_list a:hover {
+  color: #f0c929;
+  transform: scale(1.1);
+}
+
+/* message styles */
+.contact-img {
+  width: 60px;
+}
+
+.selected {
+  background-color: #ac0d0d;
+  color: white;
+}
+.selected:hover {
+  background-color: #f0c929;
+}
